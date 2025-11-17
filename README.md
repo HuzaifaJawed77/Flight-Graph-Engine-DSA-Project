@@ -27,6 +27,7 @@ Final Report
 1. Introduction
 Air transportation networks are critical components of national and international connectivity. With the rapid expansion of cities and increasing dependency on air travel, the need for intelligent route optimization systems has grown significantly. This project, Flight Graph Management: Optimized Air Routes Navigation System, focuses on analyzing air routes using graph algorithms and data structures to determine the shortest and most cost-efficient flight paths between destinations.
 The system loads city nodes (airports) and directed flight routes, manages them through a Binary Search Tree (BST), and computes optimized routes using Dijkstra’s shortest path algorithm. This lightweight yet powerful system demonstrates the practical combination of data structures, graph theory, and algorithm design to create an efficient navigation and route planning tool.
+
 2. Objectives of the Project
 The primary objectives of the Optimized Air Routes Navigation System are:
 • To develop a system capable of reading and storing flight cities (airports) efficiently.
@@ -36,6 +37,7 @@ The primary objectives of the Optimized Air Routes Navigation System are:
 • To allow users to inspect cities, routes, direct connections, and optimized paths.
 • To maintain a history stack for tracking user actions.
 • To implement a clear menu-based console interface suitable for academic and practical demonstrations.
+
 3. System Overview
 The system works by reading two text files:
 cities.txt
@@ -50,12 +52,15 @@ After loading data, the system constructs:
 ? A priority queue for Dijkstra’s algorithm
 ? A stack for user action history
 Users can view city lists, flight routes, direct connections, and shortest-cost paths through a friendly menu interface.
+
 4. Data Structures Used
+
 4.1 Vector
 Stores city objects containing:
 ? City ID
 ? Airport name
 Also maps each city to an index for graph traversal.
+
 4.2 Binary Search Tree (BST)
 The BST enables fast searching when loading routes or when a user inputs a city ID.
 Each BST node stores:
@@ -64,15 +69,18 @@ Each BST node stores:
 ? Vector index
 ? Left and right nodes
 BST searching reduces lookup complexity to O(log n) average.
+
 4.3 Adjacency List (Graph Representation)
 The graph uses an adjacency list where each entry stores:
 ? Destination city index
 ? Cost of flight
 This format is memory-efficient and ideal for sparse graphs like flight networks.
+
 4.4 Priority Queue (Min-Heap)
 Used in Dijkstra’s algorithm to efficiently extract the next closest unvisited city.
 The priority queue stores pairs in the form:
 (cost, cityIndex)
+
 4.5 Stack (History Recording)
 A stack records all user actions such as:
 ? Viewing cities
@@ -80,6 +88,12 @@ A stack records all user actions such as:
 ? Checking shortest path
 ? Checking direct connections
 Users can display or clear the history at any time.
+
+
+
+
+
+
 5. Methodology
 Step 1 — Load Cities
 The program reads each line from cities.txt, extracts:
@@ -120,6 +134,7 @@ Users can:
 5. View/Delete action history
 6. Exit the program
 All options are interactive and recorded in the history stack.
+
 6. Testing and Results
 The system was tested using:
 ? 20 unique city IDs (random two-digit IDs)
@@ -137,6 +152,8 @@ Example scenarios showed that the system could:
 ? Compute accurate flight-cost-optimized routes
 ? Handle asymmetric routes (A ? B but not B ? A)
 ? Trace paths through intermediate cities correctly
+
+
 7. Advantages of the System
 1. Efficient City Lookup: BST-based ID search improves performance significantly.
 2. Accurate and Optimal Route Selection: Dijkstra ensures minimum travel cost.
@@ -144,12 +161,16 @@ Example scenarios showed that the system could:
 4. Expandable Architecture: Easy to add new cities and routes.
 5. User Action Tracking: History stack supports debugging and analysis.
 6. Practical Concept: Can evolve into a real airline route planning tool.
+
+
 8. Limitations
 1. BST is not self-balancing (like AVL), affecting worst-case performance.
 2. Algorithm does not support negative weights.
 3. Routes are static, not user-editable in runtime.
 4. Only direct routes are stored; reverse routes must be added manually.
 5. Text-based interface (no GUI).
+
+
 9. Future Improvements
 1. Replace BST with AVL/Red-Black Tree for balanced searching.
 2. Add a full graphical interface (GUI).
@@ -161,6 +182,9 @@ Example scenarios showed that the system could:
 ? Seat availability
 6. Use A* algorithm for larger datasets.
 7. Provide automated reports and summaries.
+
+
+
 10. Conclusion
 The Flight Graph Management: Optimized Air Routes Navigation System successfully demonstrates how graph algorithms and data structures can solve real-world transportation optimization problems. Using a Binary Search Tree for city lookup and Dijkstra’s algorithm for shortest-cost routing, the system performs efficiently and reliably.
 This project showcases practical usage of:
@@ -170,6 +194,13 @@ This project showcases practical usage of:
 ? Stacks
 ? Graph theory
 The system is well-structured, extendable, and fulfills all project objectives.
+
+
+
+
+
+
+
 11. User Interface (UI) Overview & How the System Works
 (This section is polished for Word formatting and readability.)
 The system uses a menu-based console interface, designed to be simple, clean, and easy for any user to control. After the program loads all cities and routes, the main menu appears and remains active until the user chooses to exit.
